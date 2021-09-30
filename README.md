@@ -9,10 +9,10 @@
 The idea is to deploy arbitrary number of Load Palanced RPC nodes (Terra & Band) along side with mantle as relayer and Mirror graph servers on akash network to assure complete decentralization and prvent front running | currently work is in progress | for a rough idea please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design ( work done for solana) and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns)
 
 # Best practices to host front-ends on Skynet
-1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 3 shares
-2. [x] using an ENS or HNS decentralized domain name for the web app | 1 share
-3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 1 share
-4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 1 share
+1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
+2. [x] using an ENS or HNS decentralized domain name for the web app | 
+3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 
+4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 
 
 # Mirror Web dApp (Terra)
 
