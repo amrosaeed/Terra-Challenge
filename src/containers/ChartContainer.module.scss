@@ -1,0 +1,24 @@
+@import "mixins";
+
+.chart {
+  @include mobile {
+    width: 100%;
+    height: 180px;
+    margin-top: -12px;
+  }
+
+  @include desktop {
+    width: 100%;
+    height: 300px;
+    margin-top: -16px;
+  }
+}
+
+.compact {
+  display: inline-block;
+
+  .chart {
+    width: 60px;
+    height: 24px;
+  }
+}

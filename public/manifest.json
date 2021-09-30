@@ -1,0 +1,18 @@
+{
+  "short_name": "Mirror",
+  "name": "Mirror",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": ".",
+  
+  "display": "fullscreen",
+  "theme_color": "#1c1c1c",
+  "background_color": "#1c1c1c",
+  "description" : "Assets Reflected on the Blockchain",
+  "skylink" : "AQC2TDP2zSLBzMXFWg2FYYpXfUizHrIzg0S4pn6l-2TLfg"
+}

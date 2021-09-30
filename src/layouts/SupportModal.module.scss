@@ -1,0 +1,19 @@
+@import "mixins";
+
+.article {
+  text-align: center;
+}
+
+.desc {
+  color: white;
+  font-weight: 600;
+  margin: 60px auto;
+  white-space: pre-line;
+}
+
+.installed {
+  @include link;
+  display: block;
+  font-size: 12px;
+  margin: 5px auto 0;
+}

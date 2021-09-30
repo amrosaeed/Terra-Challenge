@@ -1,0 +1,7 @@
+@import "mixins";
+
+.nav {
+  @include desktop {
+    max-width: 360px;
+  }
+}
