@@ -1,10 +1,18 @@
 # Hackathon: Harmony Hackathon: Terra Challenge
-Host Mirror's Front-End On Skynet
+### Host Mirror's Front-End On Skynet
+1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
+2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
+3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
 
+# Best practices to host front-ends on Skynet
 1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 3 shares
 2. [x] using an ENS or HNS decentralized domain name for the web app | 1 share
 3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 1 share
 4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 1 share
+
+### Host Mirror's Back-End On Akash
+
+The idea is to deploy arbitrary number of Load Palanced RPC nodes (Terra & Band) along side with mantle as relayer and Mirror graph servers on akash network to assure complete decentralization and prvent front running | currently work is in progress | for a rough idea please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design ( work done for solana) and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns)
 
 # Mirror Web App (Terra)
 
