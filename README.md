@@ -6,7 +6,13 @@
 
 ### Host Mirror's Back-End On Akash
 
+***Solution 1:***
+
 The idea is to deploy arbitrary number of Load Palanced RPC nodes (Terra & Band) along side with mantle as relayer and Mirror graph servers on akash network to assure complete decentralization and prevent front running | **currently work is in progress** | for a rough idea please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
+
+***Solution 2:***
+
+On the mean time we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a Front end rely on "continous" data feeds wouldn't ever have to communicate with the server, User just have to trust that the publishing party's  private seed wasn't compromised, Even with GraphQL, Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
 ### Terra station wallet | Mirror mobile wallet
 1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
