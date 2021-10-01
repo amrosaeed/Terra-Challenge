@@ -9,10 +9,9 @@
 The idea is to deploy arbitrary number of Load Palanced RPC nodes (Terra & Band) along side with mantle as relayer and Mirror graph servers on akash network to assure complete decentralization and prevent front running | **currently work is in progress** | for a rough idea please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
 ### Terra station wallet | Mirror mobile wallet
-
-* We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store
-
-* Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/)
+1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
+2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
+3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
 
 # Best practices to host front-ends on Skynet
 1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
@@ -37,10 +36,26 @@ The Mirror Web App is a web frontend for interacting with [Mirror Contracts](htt
 
 ## Skynet portal URL
 
+**Mirror-web-dApp**
+
 ```
 https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
 ```
-## HNS decentralized domain name
+**eth-web-app**
+
+```
+https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
+```
+**Terra-Station**
+
+```
+https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
+```
+## HNS decentralized domain name (Why?)
+
+HNS Domains are censorship-resistant, seizure-resistant, and tamper-proof because they are stored on a Proof-of-Work blockchain.
+
+**Note: Mirror-web-dApp**
 
 ```
 https://000abt.hns.siasky.net/#/trade
@@ -63,7 +78,11 @@ Hint: Gatsby & full React Router support coming soon.
 
 ## Integrating with Homescreen
 
-### Considerations to take into account
+Users will have versions not by trusting the updates or a history of the updates, but by saving immutable versions into their own user-controlled storage as they add or access them, So the user-side stuff has to do with pinning the immutable site deployment, saving a record using MySky data. And the "publisher" piece is using the registry and resolver skylinks.
+
+### Considerations to take into account 
+
+***(Here, why we looked for using Akash to eliminate any centralized end points between Mirror user and price feed reflected on his frontend):***
 
 1. [x] Confirm the application front-end supports a static deployment on Skynet (Gatsby & full React Router support coming soon) “Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
 * Most of Terra-web-dapp pages is cashed under 100 milliseconds and some GraphQL pages are up to 650 milliseconds much under skynet to process, instead of that we are working on a GraphQL decentralized frontend with Skynet.
@@ -92,7 +111,7 @@ By setting the resolver skylink for your application here, Homescreen will be ab
 
 source: https://docs.siasky.net/integrations/homescreen/adding-homescreen-support-to-an-app
 
-For projects full manifest file: https://github.com/amrosaeed/Skynet-Hackathon/blob/pull-request-workflow/public/manifest.json
+For projects full manifest file: https://github.com/amrosaeed/Terra-Challenge/blob/main/public/manifest.json
 
 ### Adding Skynet Action to Workflow
 
@@ -110,7 +129,7 @@ Please create a file in your code source “.github/workflows/deploy.yml” with
 
 source: https://docs.siasky.net/developer-guides/deploy-github-actions
 
-For project's full .yml file: https://github.com/amrosaeed/Skynet-Hackathon/tree/pull-request-workflow
+For project's full .yml file: https://github.com/amrosaeed/Terra-Challenge/blob/main/.github/workflows/deploy.yml
 
 ## Quick Installation & Start
 
