@@ -1,10 +1,32 @@
 # Hackathon: Harmony Hackathon: Terra Challenge
-### Host Mirror's Front-End On Skynet
+
+## Host Mirror's User Interface Front-End On Skynet
 1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
 2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
 3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
 
-### Host Mirror's Back-End On Akash
+## Host Mirror's User Interface Back-End On Akash
+
+***State of data feeds for Mirror-web-dapp:***
+
+#### Band protocol (role):
+
+there are oracle contracts for each mAsset, using band protocol, which take feeds from a pre-whitelisted feeder
+so band has their oracle state, Terra just have a relayer as a contract implemented on Terra,
+technically decentralizing mirror webapp has nothing to do with oracle feed, the inner workings are decentralized ***(but not ideal setup for preventing front running)*** since the price feed is from band, if you run your clock around Band faster than the relayer, then yes you can front run Mirror users.
+
+***Solution immplemented (Mirror-web-app) to avoid front running and add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
+ 
+#### Mirror-graph:
+
+Mirror itself can run without the graph backend though, but graph backend is there to provide historical data many business logic is still functional without it but not all as some business logic rely on (historical data), althought you can't front run a price feed from centralized server (price sources), it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
+
+#### Mantle:
+
+***Solution immplemented (Mirror-web-dApp) to avoid relying on a single point of failure.***
+
+Mirror-web-dapp relys on mantle, It s just a state reader interface, Meant to used to mitigate the risk proposed by relying sloely on GraphQl, but also hosted on a centralized server as a blockchain SaaS.
+
 
 ***Solution Part1:***
 
