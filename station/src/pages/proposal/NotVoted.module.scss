@@ -1,0 +1,32 @@
+.card {
+  font-size: 13px;
+}
+
+.desc i {
+  margin-right: 6px;
+}
+
+.item {
+  margin-top: 10px;
+
+  &:first-child {
+    margin-top: 20px;
+  }
+
+  strong {
+    margin-right: 10px;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  height: 22px;
+  border-radius: 11px;
+  padding: 0 15px;
+
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}

@@ -1,0 +1,30 @@
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.component {
+  text-align: center;
+
+  canvas {
+    border-radius: 8px;
+  }
+}
+
+.warn {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.encoded {
+  background-color: #e9edf8;
+  border-radius: 5px;
+  padding: 10px 15px;
+  white-space: pre-wrap;
+}
+
+.copy {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,75 @@
+@use 'sass:math';
+
+.badge {
+  color: $brand;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 22px;
+  height: 22px;
+  border-radius: 11px;
+  padding: 0 12px;
+  min-width: 60px;
+  text-align: center;
+  white-space: nowrap;
+
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+/* sizes */
+.badge-small {
+  $height: 20px;
+  font-size: 11px;
+  line-height: $height;
+  height: $height;
+  min-width: 55px;
+  border-radius: math.div($height, 2);
+
+  & + & {
+    margin-left: 5px;
+  }
+}
+
+/* variant */
+.badge-light {
+  background: fade-out($brand, 0.9);
+  color: fade-out($brand, 0.25);
+}
+
+.badge-primary {
+  color: white;
+  font-weight: 500;
+  background: $brand;
+}
+
+.badge-secondary {
+  color: white;
+  font-weight: 500;
+  background: $sky;
+}
+
+.badge-success {
+  color: white;
+  font-weight: 500;
+  background: $green;
+}
+
+.badge-warning {
+  color: white;
+  font-weight: 500;
+  background: $orange;
+}
+
+.badge-danger {
+  color: white;
+  font-weight: 500;
+  background: $red;
+}
+
+.badge-info {
+  color: white;
+  font-weight: 500;
+  background: $purple;
+}

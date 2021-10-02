@@ -1,0 +1,74 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.user {
+  font-size: 12px;
+}
+
+.flex {
+  @include flex(flex-start);
+
+  .name {
+    border-right: 1px solid #d2d9f0;
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media (max-width: $breakpoint - 1) {
+      width: 12em;
+    }
+  }
+}
+
+.name {
+  @include flex(flex-start);
+  font-weight: bold;
+
+  i {
+    margin-right: 5px;
+  }
+
+  .settings {
+    line-height: 1;
+    padding: 5px;
+  }
+}
+
+/* address */
+.copy {
+  @include flex(flex-start);
+}
+
+.text {
+  text-align: left;
+  white-space: nowrap;
+  margin-right: 5px;
+
+  .extension & {
+    margin-right: 2px;
+  }
+}
+
+.button {
+  @include flex();
+
+  .flex & {
+    background: #edf4fe;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+
+  svg {
+    fill: $brand;
+  }
+}
+
+/* ledger */
+.ledger {
+  transform: translate(-50%, 0);
+}

@@ -1,0 +1,88 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+$border: 1px solid fade-out(black, 0.95);
+
+.header {
+  @include drag();
+
+  background: white;
+  border-bottom: $border;
+}
+
+.header:not(.extension) {
+  @media (min-width: $breakpoint-large) {
+    position: sticky;
+    top: 0;
+    left: $nav-width-large;
+    right: 0;
+    z-index: 1030;
+  }
+}
+
+$padding-sm: 15px 20px;
+
+.extension {
+  background: $bg;
+
+  .container {
+    padding: $padding-sm;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+}
+
+.container {
+  @include flex(space-between);
+
+  @media (max-width: $breakpoint-large - 1) {
+    padding: $padding-sm;
+  }
+
+  @media (min-width: $breakpoint-large) {
+    padding: 0 $gutter-large;
+    height: $nav-height-large;
+    width: 100%;
+    max-width: $max-width;
+  }
+}
+
+.connect {
+  @include flex(flex-start);
+  flex: 1;
+
+  .username {
+    @include truncate();
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.button {
+  @media (max-width: $breakpoint-large - 1) {
+    border-radius: 5px;
+    font-size: 13px;
+    height: 40px;
+    width: 100%;
+  }
+}
+
+.signout {
+  padding: 10px 0;
+}
+
+.select {
+  border: 1px solid #cfd8ea;
+  margin-left: 12px;
+}
+
+.actions {
+  flex: none;
+}
+
+.link {
+  @include flex;
+  color: $brand;
+}

@@ -1,0 +1,142 @@
+@use 'sass:math';
+
+$border: 1px solid $line;
+$box-shadow: fade-out(black, 0.95);
+$padding: 25px;
+$padding-small: 20px;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+
+  @media (max-width: $breakpoint - 1) {
+    box-shadow: 0 1px 5px 0 $box-shadow;
+
+    & & {
+      border: $border;
+      border-radius: $radius;
+    }
+  }
+
+  @media (min-width: $breakpoint) {
+    border: $border;
+    border-radius: $radius;
+    box-shadow: 0 1px 1px 0 $box-shadow;
+  }
+
+  & &,
+  &.no-shadow {
+    box-shadow: unset;
+  }
+
+  &.no-shadow {
+    margin-top: unset;
+  }
+}
+
+.card-main {
+  appearance: none;
+
+  .card-icon {
+    @include flex();
+    border: 1px solid $line;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover .card-icon {
+    background: $brand;
+    color: white;
+  }
+}
+
+button.card-main {
+  text-align: left;
+}
+
+.card-header {
+  @include flex(space-between);
+
+  font-size: 15px;
+  font-weight: 500;
+  overflow-x: auto;
+
+  .card-actions {
+    @include flex();
+    flex: none;
+  }
+
+  .card-small & {
+    font-size: 13px;
+  }
+
+  @media (max-width: $breakpoint - 1) {
+    padding: $gutter;
+  }
+
+  @media (min-width: $breakpoint) {
+    padding: 20px $padding;
+
+    .card-small & {
+      padding: $padding-small;
+    }
+  }
+
+  .bordered & {
+    border-bottom: $border;
+  }
+
+  &.bg {
+    background: $bg-hover;
+  }
+
+  &.collapsed {
+    padding-bottom: 0;
+  }
+}
+
+.card-body {
+  @media (max-width: $breakpoint - 1) {
+    padding: $gutter;
+  }
+
+  @media (min-width: $breakpoint) {
+    padding: $padding;
+
+    .card-small & {
+      padding: $padding-small;
+    }
+
+    .card-small .card-header + & {
+      padding-top: math.div($padding-small, 2);
+    }
+  }
+}
+
+.card-footer {
+  overflow-x: auto;
+  white-space: nowrap;
+
+  @media (max-width: $breakpoint - 1) {
+    padding: $gutter;
+  }
+
+  @media (min-width: $breakpoint) {
+    padding: $padding;
+
+    .card-small & {
+      padding: $padding-small;
+    }
+  }
+
+  .bordered > & {
+    border-top: $border;
+  }
+
+  &.collapsed {
+    padding-top: 0;
+  }
+}

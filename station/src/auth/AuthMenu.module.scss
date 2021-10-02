@@ -1,0 +1,66 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.header {
+  background: $bg;
+  padding: 20px;
+  border-bottom: 1px solid $hairline;
+
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+}
+
+.item {
+  @include flex();
+
+  &:not(:first-child) {
+    border-top: 1px solid $hairline;
+  }
+
+  color: $brand;
+  padding: 20px;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+
+  h1 {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 15px;
+    text-align: left;
+
+    @media (max-width: $breakpoint - 1) {
+      font-size: 18px;
+    }
+
+    .extension & {
+      font-size: 16px;
+    }
+  }
+
+  .chevron {
+    @include flex();
+    border: 1px solid $line;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: $bg-hover;
+    text-decoration: none;
+
+    .chevron {
+      background: $brand;
+      color: white;
+    }
+  }
+}

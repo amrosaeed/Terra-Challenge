@@ -1,0 +1,44 @@
+@import '../styles/mixins';
+@import '../styles/variables';
+
+.header {
+  margin-bottom: 20px;
+}
+
+.heading {
+  @include flex(space-between);
+}
+
+.header,
+.article > h2 {
+  @media (max-width: $breakpoint - 1) {
+    padding: 0 $gutter;
+  }
+}
+
+.title {
+  @media (max-width: $breakpoint - 1) {
+    font-size: 22px;
+  }
+
+  @media (min-width: $breakpoint) {
+    font-size: 26px;
+  }
+}
+
+.desc {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.article > h2 {
+  @media (max-width: $breakpoint - 1) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $breakpoint) {
+    font-size: 20px;
+  }
+
+  margin: 30px 0 15px;
+}

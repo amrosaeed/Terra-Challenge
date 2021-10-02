@@ -1,0 +1,119 @@
+@use 'sass:math';
+
+$margin: 10px;
+$margin-large: 20px;
+
+.row {
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint - 1) {
+    margin: -$margin 0;
+  }
+
+  @media (min-width: $breakpoint) {
+    @include flex(flex-start, stretch);
+    margin: math.div($margin-large, -2);
+  }
+
+  .col {
+    @media (max-width: $breakpoint - 1) {
+      padding: $margin 0;
+    }
+
+    @media (min-width: $breakpoint) {
+      flex: 1;
+      padding: math.div($margin-large, 2);
+    }
+
+    .card {
+      height: 100%;
+    }
+  }
+
+  .col-2 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: math.div(100% * 2, 12);
+    }
+  }
+
+  .col-4 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: math.div(100% * 4, 12);
+    }
+  }
+
+  .col-5 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: math.div(100% * 5, 12);
+    }
+  }
+
+  .col-6 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: math.div(100% * 6, 12);
+    }
+  }
+
+  .col-8 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: math.div(100% * 8, 12);
+    }
+  }
+
+  .col-20 {
+    @media (min-width: $breakpoint) {
+      flex: none;
+      width: 20%;
+    }
+  }
+
+  .col-6-1280 {
+    @media (min-width: $breakpoint) and (max-width: 1280px - 1) {
+      flex: none;
+      width: 50%;
+    }
+  }
+
+  .col-full-1280 {
+    @media (min-width: $breakpoint) and (max-width: 1280px - 1) {
+      flex: none;
+      width: 100%;
+    }
+  }
+
+  & + & {
+    @media (max-width: $breakpoint - 1) {
+      margin-top: $margin;
+    }
+
+    @media (min-width: $breakpoint) {
+      margin-top: math.div($margin-large, 2);
+    }
+  }
+}
+
+.row + .card,
+.card + .card {
+  @media (max-width: $breakpoint - 1) {
+    margin-top: (2 * $margin);
+  }
+
+  @media (min-width: $breakpoint) {
+    margin-top: $margin-large;
+  }
+}
+
+.card + .row {
+  @media (max-width: $breakpoint - 1) {
+    margin-top: $margin;
+  }
+
+  @media (min-width: $breakpoint) {
+    margin-top: math.div($margin-large, 2);
+  }
+}

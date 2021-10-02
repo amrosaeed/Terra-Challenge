@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+
+  & + & {
+    margin-left: 5px;
+  }
+}
+
+.tooltip {
+  top: 0;
+  left: 50%;
+  text-align: center;
+}
+
+.top {
+  transform: translate(-50%, -100%);
+}
+
+.bottom {
+  transform: translate(-50%, 0);
+  margin-top: 20px;
+}

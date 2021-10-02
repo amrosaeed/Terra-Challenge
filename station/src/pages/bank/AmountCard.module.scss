@@ -1,0 +1,101 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.card {
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .article {
+    flex: 1;
+  }
+
+  .button {
+    flex: none;
+  }
+}
+
+.extension {
+  display: block;
+  width: 100%;
+  padding: 20px;
+
+  &:hover {
+    background: $bg-hover;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid $line;
+  }
+
+  .header {
+    @include flex(space-between);
+    width: 100%;
+    height: unset;
+  }
+}
+
+.article {
+  white-space: nowrap;
+}
+
+.header {
+  @include flex(space-between);
+  height: 80px;
+}
+
+.denom {
+  @include flex(flex-start);
+  font-size: 16px;
+
+  svg,
+  img {
+    margin-right: 10px;
+  }
+}
+
+.value {
+  flex: 1;
+  text-align: right;
+}
+
+.amount {
+  @media (max-width: $breakpoint - 1) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $breakpoint) {
+    font-size: 20px;
+  }
+}
+
+.estimated {
+  opacity: 0.5;
+
+  @media (max-width: $breakpoint - 1) {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint) {
+    font-size: 13px;
+  }
+}
+
+.button {
+  @media (max-width: $breakpoint - 1) {
+    margin-left: 10px;
+    line-height: 1;
+
+    span {
+      min-width: unset;
+      font-size: 0;
+      width: 24px;
+      height: 24px;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint) {
+    margin-left: 25px;
+  }
+}

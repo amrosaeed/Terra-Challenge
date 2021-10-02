@@ -1,0 +1,50 @@
+@import '../../styles/variables';
+
+.chart {
+  margin: 0 auto;
+  position: relative;
+
+  > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 18px solid $bg;
+    border-radius: 50%;
+    z-index: 1;
+  }
+}
+
+.total {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  width: 80%;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+}
+
+.tabs {
+  margin-top: 20px;
+  text-align: center;
+}
