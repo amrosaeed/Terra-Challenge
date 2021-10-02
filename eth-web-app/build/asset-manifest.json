@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.54b69bd7.chunk.css",
+    "main.js": "/static/js/main.52705699.chunk.js",
+    "main.js.map": "/static/js/main.52705699.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.31dba186.js",
+    "runtime-main.js.map": "/static/js/runtime-main.31dba186.js.map",
+    "static/css/2.adc89df6.chunk.css": "/static/css/2.adc89df6.chunk.css",
+    "static/js/2.df0f1882.chunk.js": "/static/js/2.df0f1882.chunk.js",
+    "static/js/2.df0f1882.chunk.js.map": "/static/js/2.df0f1882.chunk.js.map",
+    "static/js/3.ef4a3126.chunk.js": "/static/js/3.ef4a3126.chunk.js",
+    "static/js/3.ef4a3126.chunk.js.map": "/static/js/3.ef4a3126.chunk.js.map",
+    "static/js/4.44e47cac.chunk.js": "/static/js/4.44e47cac.chunk.js",
+    "static/js/4.44e47cac.chunk.js.map": "/static/js/4.44e47cac.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.adc89df6.chunk.css.map": "/static/css/2.adc89df6.chunk.css.map",
+    "static/css/main.54b69bd7.chunk.css.map": "/static/css/main.54b69bd7.chunk.css.map",
+    "static/js/2.df0f1882.chunk.js.LICENSE.txt": "/static/js/2.df0f1882.chunk.js.LICENSE.txt",
+    "static/media/Airdrop.f5212f14.svg": "/static/media/Airdrop.f5212f14.svg",
+    "static/media/CoinbaseWallet.098d24ab.png": "/static/media/CoinbaseWallet.098d24ab.png",
+    "static/media/Doctor.59cb6e15.png": "/static/media/Doctor.59cb6e15.png",
+    "static/media/Guard.4637126e.svg": "/static/media/Guard.4637126e.svg",
+    "static/media/KuCoin.4300e2b9.svg": "/static/media/KuCoin.4300e2b9.svg",
+    "static/media/Uniswap.5f036ead.svg": "/static/media/Uniswap.5f036ead.svg",
+    "static/media/mETH.7395524d.svg": "/static/media/mETH.7395524d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.31dba186.js",
+    "static/css/2.adc89df6.chunk.css",
+    "static/js/2.df0f1882.chunk.js",
+    "static/css/main.54b69bd7.chunk.css",
+    "static/js/main.52705699.chunk.js"
+  ]
+}
