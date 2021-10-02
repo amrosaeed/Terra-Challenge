@@ -27,6 +27,7 @@ Mirror itself can run without the graph backend though, but graph backend is the
 
 Mirror-web-dapp relys on mantle, It s just a state reader interface, Meant to used to mitigate the risk proposed by relying sloely on GraphQl, but also hosted on a centralized server as a blockchain SaaS.
 
+If you query to lcd, you send a query msg to some nodes. But If you query to lcd, the msg send to the mantle server, lcd and mantle do almost samething, but mantle is only for the get msg
 
 ***Solution Part1:***
 
