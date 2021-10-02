@@ -42,7 +42,10 @@ The question of "is the server lying to me" is another question. Skynet has 2 wa
 
 On the mean time we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a Front end rely on "continous" data feeds wouldn't ever have to communicate with the server, User just have to trust that the publishing party's  private seed wasn't compromised, Even with GraphQL, Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
-![Terra Network](https://user-images.githubusercontent.com/82784007/135628500-537936bf-c1b2-4974-837f-3dc4853b4be7.png)
+![part2](https://user-images.githubusercontent.com/82784007/135714841-d596b4e0-34d3-4c5c-bc31-4ee8973446b3.png)
+
+
+![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
 
 ### Terra station wallet | Mirror mobile wallet
