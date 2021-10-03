@@ -5,6 +5,11 @@
 2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
 3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
 
+### Terra station wallet | Mirror mobile wallet
+1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
+2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station, as unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
+3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
+4. 
 ## Host Mirror's User Interface Back-End On Akash
 
 ***State of data feeds for Mirror-web-dapp:***
@@ -47,11 +52,12 @@ On the mean time we are working with skynet to build a tool where servers can pu
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
+# Best practices to host back-ends on Akash
 
-### Terra station wallet | Mirror mobile wallet
-1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
-2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
-3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
+1. [x] Setup HTTPS URL for API | 
+2. [x] Setup Database Redundancy | Backend Redundant Postgresql infrastucture
+3. [x] Setup database backups | Backup your data locally | Upload local backup to Skynet
+4. [x] Database replication next steps |  Use SkyNet registry as a simpler way to provide backup / restoration.
 
 # Best practices to host front-ends on Skynet
 1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
