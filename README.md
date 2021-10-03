@@ -16,36 +16,36 @@
 
 #### Band protocol (role):
 
-there are oracle contracts for each mAsset, using band protocol, which take feeds from a pre-whitelisted feeder
-so band has their oracle state, Terra just have a relayer as a contract implemented on Terra,
-technically decentralizing mirror webapp has nothing to do with oracle feed, the inner workings are decentralized ***(but not ideal setup for preventing front running)*** since the price feed is from band, if you run your clock around Band faster than the relayer, then yes you can front run Mirror users.
+There are oracle contracts for each mAsset. These assets use band protocol, which take feeds from a pre-whitelisted feeder.
+So band has their oracle state, Terra just has a relayer as a contract implemented on Terra.
+Technically, decentralizing mirror webapp has nothing to do with the oracle feed, however, the inner workings are decentralized ***(but not ideal setup for preventing front running)*** . Since the price feed is from band, if you run your clock around Band faster than the relayer you can front run Mirror users.
 
 ***Solution immplemented (Mirror-web-app) to avoid front running and add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
  
 #### Mirror-graph:
 
-Mirror itself can run without the graph backend though, but graph backend is there to provide historical data many business logic is still functional without it but not all as some business logic rely on (historical data), althought you can't front run a price feed from centralized server (price sources), it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
+Mirror itself can run without the graphql backend though. The graphql backend is there to provide historical data. Alot of business logic is still functional without it but not all  business logic relies on historical data. Although you can't front run a price feed from a centralized server (price sources), it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
 
 #### Mantle:
 
 ***Solution immplemented (Mirror-web-dApp) to avoid relying on a single point of failure.***
 
-Mirror-web-dapp relys on mantle, It s just a state reader interface, Meant to used to mitigate the risk proposed by relying sloely on GraphQl, but also hosted on a centralized server as a blockchain SaaS.
+Mirror-web-dapp relies on mantle. It s just a state reader interface, meant to used to mitigate the risk proposed by relying soely on GraphQl, but also hosted on a centralized server as a blockchain SaaS.
 
-If you query to lcd, you send a query msg to some nodes. But If you query to lcd, the msg send to the mantle server, lcd and mantle do almost samething, but mantle is only for the get msg
+If you query to lcd, you send a query msg to some nodes. But if you query to lcd, the msg send to the mantle server, lcd and mantle do almost the same thing. Mantle is only for the get msg
 
 ***Solution Part1:***
 
-The idea is to deploy arbitrary number of Load Palanced RPC nodes (Terra) along side with Skynet Portal and Mirror graph servers on akash network to assure complete decentralization and prevent front running | **currently work is in progress** | for a rough idea please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
+The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
 ***Solution Part2:***
 
 The question of "is the server lying to me" is another question. Skynet has 2 ways of getting around this.
 
-1. You can (in theory, Skynet still working on tooling) verify the merkle root of the file downloaded contained in the skylink itself
+1. You can in theory, (Skynet still working on tooling) verify the merkle root of the file downloaded contained in the skylink itself
 2. For mutable data, portals pass along the data, pubkey and the signature of that data from the writer of the data. This makes it trivial to verify that the data a) was really written by the author, and b) wasn't tampered with.
 
-On the mean time we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a Front end rely on "continous" data feeds wouldn't ever have to communicate with the server, User just have to trust that the publishing party's  private seed wasn't compromised, Even with GraphQL, Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
+In the mean time, we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a front-end that relies on "continous" data feeds wouldn't ever have to communicate with the server. Users would just have to trust that the publishing party's  private seed wasn't compromised. Even with GraphQL, a Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
 ![part2](https://user-images.githubusercontent.com/82784007/135714841-d596b4e0-34d3-4c5c-bc31-4ee8973446b3.png)
 
@@ -124,14 +124,14 @@ Hint: Gatsby & full React Router support coming soon.
 
 ## Integrating with Homescreen
 
-Users will have versions not by trusting the updates or a history of the updates, but by saving immutable versions into their own user-controlled storage as they add or access them, So the user-side stuff has to do with pinning the immutable site deployment, saving a record using MySky data. And the "publisher" piece is using the registry and resolver skylinks.
+Users will have versions not by trusting the updates or a history of the updates, but by saving immutable versions into their own user-controlled storage as they add or access them. So the user-side stuff has to do with pinning the immutable site deployment, saving a record using MySky data. And the "publisher" piece is using the registry and resolver skylinks.
 
 ### Considerations to take into account 
 
 ***(Here, why we looked for using Akash to eliminate any centralized end points between Mirror user and price feed reflected on his frontend):***
 
-1. [x] Confirm the application front-end supports a static deployment on Skynet (Gatsby & full React Router support coming soon) “Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
-* Most of Terra-web-dapp pages is cashed under 100 milliseconds and some GraphQL pages are up to 650 milliseconds much under skynet to process, instead of that we are working on a GraphQL decentralized frontend with Skynet.
+1. [x] Confirm the application front-end supports a static deployment on Skynet (Gatsby & full React Router support coming soon). “Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
+* Most of Terra-web-dapp pages is cached under 100 milliseconds and some GraphQL pages are up to 650 milliseconds much under skynet to process, instead of that we are working on a GraphQL decentralized frontend with Skynet.
 
 2. [x] Assure APIs and web requests from your app only depend on decentralized protocols that will remain accessible even with future front-end updates. For web3, this usually means interacting with MetaMask or a Skynet portal, not making HTTP requests to your centralized back-end server. 
 * Terra-web-dapp is using Band protocol (On chain decentralized oracle) to query price feed for mAssets.
