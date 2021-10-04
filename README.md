@@ -338,7 +338,23 @@ To run the application locally, you can follow the steps below.
 
 You can now **visit [http://localhost:3000](http://localhost:3000)** in the browser to **access the UI**. For testing the **API**, requests can be made to port 80, **Example**: `GET http://localhost:80/api/v1/notes`
 
+## Sources and resources
 
+#### Unstoppable Stack
+
+- Unstoppable Stack [https://github.com/coffeeroaster/unstoppable-web2.0/](https://github.com/coffeeroaster/unstoppable-web2.0/)
+
+#### Akash
+- Akash deployment documentation [https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)
+- Akash multi-tier SDL guide [https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md](https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md)
+- SDL examples [https://github.com/ovrclk/awesome-akash](https://github.com/ovrclk/awesome-akash)
+- In-depth walkthrough guide [https://medium.com/coinmonks/guide-to-deploying-applications-to-akash-decloud-b35dc97e5ca4](https://medium.com/coinmonks/guide-to-deploying-applications-to-akash-decloud-b35dc97e5ca4)
+- Akash Discord [http://discord.akash.network/](http://discord.akash.network/)
+
+#### Skynet
+- Detailed Skynet deployment guide [https://blog.sia.tech/automated-deployments-on-skynet-28d2f32f6ca1](https://blog.sia.tech/automated-deployments-on-skynet-28d2f32f6ca1)
+
+- Unstoppable Stack [https://github.com/coffeeroaster/unstoppable-web2.0/](https://github.com/coffeeroaster/unstoppable-web2.0/)
 ## License
 
 This software is licensed under the Apache 2.0 license. Read more about it [here](./LICENSE).
