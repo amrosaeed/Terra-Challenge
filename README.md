@@ -87,7 +87,29 @@ In the mean time, we are working with skynet to build a tool where servers can p
 
 The Mirror Web App is a web frontend for interacting with [Mirror Contracts](https://github.com/Mirror-Protocol/mirror-contracts). It is intended to be used with the [Terra Station Extension](https://terra.money/extension) plugin for Chromium browsers.
 
-## Skynet portal URL
+## Skynet Web Portals:
+
+Portals at their most basic are a special type of renter on the Sia network. If you run a Sia node, you can easily upload files to Skynet or pin files you find on the network
+
+### Blocklists:
+
+Portals maintain a list of "blocklisted" files that are not downloadable through their portal, Blocklists are an important way for portals to remain compliant with legal obligations.
+
+***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whome its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location constraints*** 
+
+### Web Portal Components:
+
+Skynet Web Portals consist of all the components needed to operate a publically accessible portal allowing access to the full Skynet ecosystem.
+The web portal consists of:
+1. a full Sia node
+2. a full Handshake node
+3. a web-server
+4. a web-app frontend
+5. various scripts for server maintenance
+
+This list will continue to grow as Skynet add functionality to support things like accounts and payment processing.
+
+### Skynet portal URL
 
 **Mirror-web-dApp**
 
