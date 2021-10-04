@@ -208,14 +208,136 @@ You can deploy to Akash using the **standard Akash CLI** directly [https://docs.
 9. At this point the tool will show you your **Web URIs** which you can use to access your application.
 10. Update [application/frontend/.env.production](application/frontend/.env.production) with the **Web URIs**.
 
-## Quick Installation & Start
+## Step 3 - Setup Database Redundancy
+## Backend Redundant Postgresql infrastucture
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ![](guide/images/db-arch.jpg)
 
-```sh
-npm install
-npm run build
+The backend runs on [Akash](https://akash.network). Take a moment to review the Akash [config](akash/deploy-sample.yml). The backend stores the database on akash. Currently, Akash does not have a persistent storage solution. This solution provides the capability to perform regular backups and database restoration via [Skynet](https://siasky.net/). This reference architecture provides the following capability:
+
+* Provide a redundant Postgresql configuration. **pg-0** is replicated to **pg-1**
+* `pg-0` - the postgres master starts up. When it first starts up, it will download an encrypted db backup from Skynet.
+* `pg-0` - decrypts the backup and loads into the database.
+* `pg-1` - the postgres standby starts up. and syncs with `pg-0`.
+* `pgpool` container starts up and connects to both `pg-0` and `pg-1` and automatically determine which one is master.
+* `web` container starts up and connects the the **db cluster** via pgpool.
+* If `pg-1` or `pg-0` goes down, **pgpool** will automatically re-route to the one that is active.
+* If the entire cluster goes down, the cluster can be re-deployed to akash. It will then start up from the last backup.
+
+
+
+### Implementation Notes
+* The postgres Docker image will execute any .sh, load and .sql, .sql.gz file in /docker-entrypoint-initdb.d
+* Note that when testing this locally with Docker there are no volumes. This is by design. Everything persistent should be uploaded to the Skynet.
+* The `pg-0` image initially loads [pg-0/dbout.sh](pg-0/dbout.sh) before the PG cluster is started. It reads in the following env vars: `BACKUP_SYKNET_URL` and `BACKUP_PASS`. The encrypted zip file is retrieved from Skynet and decrpyts it with `BACKUP_PASS`. Finally, the DB backup is loaded into the PG cluster. 
+* `BACKUP_SKYNET_URL` is used to retrieve the latest backup.
+
+
+### Architecture
+
+
+Based off the [Bitnami pgpool project](https://github.com/bitnami/bitnami-docker-pgpool/), this approach sets up three containers. **pg-0** as a postgresql master, **pg-1** as a postgresql secondary  ( running as a hot standby) and **pg-pool** will determine which postgres container to connect to.
+
+
+### Testing Postgresql cluster in a test environment
+
+
 ```
+# run the backend
+$docker-compose up -d
+# run the front end
+$ cd application/frontend/ && npm install && npm start
+# Connect to the browser at http://localhost:3000
+```
+
+### Shut down **pg-0** container
+```
+$ docker-compose stop pg-0
+## verify that things are working as planned
+# Connect to the browser at http://localhost:3000
+# Should see all data still there. Try adding values
+```
+
+
+## Step 4 - Setup database backups
+
+### Backup your data locally  
+
+To retreive a live encrypted backup of the data, you can run the following command against the API:
+```
+# For testing locally with docker-compose
+curl -v http://localhost/getsnapshot > dbout.zip
+# For testing against AKASH deployment
+# Obtain $AkashHost and $AkashPort from akash deployment (Consult Akash [documentation](https://docs.akash.network/guides/deploy) on how to obtain this)
+curl -v http://$AkashHost/getsnapshot:$AkashPort > dbout.zip
+#
+# Backup against live demo
+#
+curl https://unstoppablestack.coffeeroaster.me/getsnapshot > dbout.zip 
+```
+Make sure to update the **`$BACKUP_PASS`** env variable in docker-compose.yml, akash/deploy-sample.yml. You will use the password to decrypt the zip file. You can use **`$BACKUP_PASS`** env var in [akash/deploy-sample.yml](akash/deploy-sample.yml) to decrypt and examine the backup.
+
+### Upload local backup to Skynet
+
+Upload the backup to Skynet with [skynet-cli](https://github.com/vbstreetz/skynet-cli) and store URL as **BACKUP_SKYNET_URL**
+```
+$ npm install -g skynet-cli
+## send it to skynet!
+$ skynet-cli dbout.zip
+## Take special note of the URL. This value will be used as **BACKUP_SKYNET_URL**
+```
+
+### Tell Unstoppable Stack to load it up next time.
+update [docker-compose.yml](docker-compose.yml) (for testing locally) and [akash/deploy-sample.yml](akash/deploy-sample.yml) environment variables section and update **BACKUP_SKYNET_URL** with the value from the previous step.
+
+#### Shutdown and destroy your entire deployment
+``` 
+# For test environment
+$docker-compose down -v
+# For Akash deployment
+(Consult Akash [documentation](https://docs.akash.network/guides/deploy)
+```
+#### Start it back up (development env)
+```
+$docker-compose up -d
+# run the front end
+$ cd application/frontend/ && npm start
+# Connect to the browser at http://localhost:3000
+```
+You should now see the values from the database that you backed up.
+
+#### Start it back up (production env)
+
+* Update [akash/deploy-sample.yml](akash/deploy-sample.yml) with updated ENV variables (namely the **BACKUP_SKYNET_URL** )
+* Redeploy backend to Akash following the `step 3` in this guide.
+* If using Handshake (Step 5) Use the same Front END URL. 
+
+## Database replication next steps
+
+* Investigate [NuCypher](https://nucypher.com) for better key management
+* Look into [SkyNet registry](https://siasky.net/docs/?javascript--node#setting-data-on-the-registry) for a simpler way to provide backup / restoration. Right now, each provision to Akash requires updating a new SkyLink URI. Using a Skylink Registry will allow the container to use a consistent `skyns URL` to retrieve the latest backup for ease of use.
+
+---
+
+## Run demo application locally
+To run the application locally, you can follow the steps below.
+
+1. Stand up FastAPI and PostgreSQL **backend**
+
+	```
+	cd backend
+	docker-compose up --build
+	```
+2. In a separate terminal, stand up the React **frontend**
+	
+	```
+	cd frontend
+	npm install
+	npm run start
+	```
+
+You can now **visit [http://localhost:3000](http://localhost:3000)** in the browser to **access the UI**. For testing the **API**, requests can be made to port 80, **Example**: `GET http://localhost:80/api/v1/notes`
+
 
 ## License
 
