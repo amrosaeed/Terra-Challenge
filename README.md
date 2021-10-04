@@ -1,5 +1,14 @@
 # Hackathon: Harmony Hackathon: Terra Challenge
 Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o
+
+## Challenge:
+
+### Decentralized Asset Management 
+Over 20% of users of Mirror are in Thailand. Interact with Terra.js, Mirror.js to build decentralized front ends for Mirror. This is a core priority for TFL to enable censorship resistant asset management across borders.
+
+***Keywords:***
+
+Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentralization, Scalability and Speed (Super important for Real-World Assets)
 ## Host Mirror's User Interface Front-End On Skynet
 1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
 2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
@@ -10,6 +19,7 @@ Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o
 2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station, as unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
 3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
 4. [ ] We also looked at integrating Terra-Awap with Homescreen but unfortunately we cut short on time.
+
 ## Host Mirror's User Interface Back-End On Akash
 
 ***State of data feeds for Mirror-web-dapp:***
@@ -60,6 +70,7 @@ In the mean time, we are working with skynet to build a tool where servers can p
 | [Handshake](https://handshake.org/) | [Skynet](https://siasky.net/) | [Akash](https://akash.network/) | [Postgresql](http://postgresql.org) | [GraphQL](https://graphql.org/)
 
 ## Best practices to host front-ends on Skynet
+
 1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
 2. [x] using an ENS or HNS decentralized domain name for the web app | 
 3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 
@@ -89,13 +100,15 @@ The Mirror Web App is a web frontend for interacting with [Mirror Contracts](htt
 
 ## Skynet Web Portals:
 
-Portals at their most basic are a special type of renter on the Sia network. If you run a Sia node, you can easily upload files to Skynet or pin files you find on the network
+Portals at their most basic are a special type of renter on the Sia network. If you run a Sia node, you can easily upload files to Skynet or pin files you find on the network.
+
+***Mirror community had to deploy their own Skynet portal pinning end-points for Mirror-web-dapp | Eth-web-app | Terra-staion | Terra-swap***
 
 ### Blocklists:
 
 Portals maintain a list of "blocklisted" files that are not downloadable through their portal, Blocklists are an important way for portals to remain compliant with legal obligations.
 
-***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whome its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location constraints*** 
+***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whom its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location constraints*** 
 
 ### Web Portal Components:
 
@@ -370,7 +383,6 @@ You can now **visit [http://localhost:3000](http://localhost:3000)** in the brow
 ## Sources and resources
 
 #### Unstoppable Stack
-
 - Unstoppable Stack [https://github.com/coffeeroaster/unstoppable-web2.0/](https://github.com/coffeeroaster/unstoppable-web2.0/)
 
 #### Akash
