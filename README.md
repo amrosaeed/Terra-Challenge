@@ -9,7 +9,7 @@
 1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
 2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station, as unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
 3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
-4. 
+4. [ ] We also looked at integrating Terra-Awap with Homescreen but unfortunately we cut short on time.
 ## Host Mirror's User Interface Back-End On Akash
 
 ***State of data feeds for Mirror-web-dapp:***
@@ -52,18 +52,25 @@ In the mean time, we are working with skynet to build a tool where servers can p
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
-# Best practices to host back-ends on Akash
+# Decentralized infrastructure
+
+| DNS | Frontend  | Backend | Redundant Database | Query Language
+|:---:|:---:|:---:|:---:|:---:|
+| ![](guide/images/handshake_logo.png) | ![](guide/images/skynet_logo.png) | ![](guide/images/akash_logo.png) | ![](guide/images/postgresql-logo.png) |
+| [Handshake](https://handshake.org/) | [Skynet](https://siasky.net/) | [Akash](https://akash.network/) | [Postgresql](http://postgresql.org) | [GraphQL](https://graphql.org/)
+
+## Best practices to host front-ends on Skynet
+1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
+2. [x] using an ENS or HNS decentralized domain name for the web app | 
+3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 
+4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 
+
+## Best practices to host back-ends on Akash
 
 1. [x] Setup HTTPS URL for API | 
 2. [x] Setup Database Redundancy | Backend Redundant Postgresql infrastucture
 3. [x] Setup database backups | Backup your data locally | Upload local backup to Skynet
 4. [x] Database replication next steps |  Use SkyNet registry as a simpler way to provide backup / restoration.
-
-# Best practices to host front-ends on Skynet
-1. [x] adding a working "Save to Homescreen" link in the Github repo (example) | 
-2. [x] using an ENS or HNS decentralized domain name for the web app | 
-3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 
-4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 
 
 # Mirror Web dApp (Terra) UI fornt-end (GUIDE)
 
