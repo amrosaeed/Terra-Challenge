@@ -47,8 +47,8 @@ The question of "is the server lying to me" is another question. Skynet has 2 wa
 
 In the mean time, we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a front-end that relies on "continous" data feeds wouldn't ever have to communicate with the server. Users would just have to trust that the publishing party's  private seed wasn't compromised. Even with GraphQL, a Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
-![part2](https://user-images.githubusercontent.com/82784007/135714841-d596b4e0-34d3-4c5c-bc31-4ee8973446b3.png)
 
+![Screenshot from 2021-10-04 04-49-41](https://user-images.githubusercontent.com/82784007/135821738-d1474698-4d91-4df0-8633-f6e96e785449.png)
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
@@ -65,7 +65,7 @@ In the mean time, we are working with skynet to build a tool where servers can p
 3. [x] use the Deploy to Skynet Github action for building and deploying your frontend automatically | 
 4. [ ] hosting off-chain, mutable application data on Skynet using SkyDB or MySky | 
 
-# Mirror Web dApp (Terra) 
+# Mirror Web dApp (Terra) UI fornt-end (GUIDE)
 
 **Note:** By clicking on the black-green button you will be forwarded to Homescreen where users can set their own version of the front end for Mirror-web-dapp.
 
@@ -176,6 +176,37 @@ Please create a file in your code source “.github/workflows/deploy.yml” with
 source: https://docs.siasky.net/developer-guides/deploy-github-actions
 
 For project's full .yml file: https://github.com/amrosaeed/Terra-Challenge/blob/main/.github/workflows/deploy.yml
+
+# Mirror Web dApp (Terra) UI back-end (GUIDE)
+
+## Step 1 - Push Docker image
+
+1. Make sure **Docker** [https://www.docker.com/](https://www.docker.com/) is installed
+2. **CD** to the directory where your `Dockerfile` is. For this repository, it is in `application/backend/Dockerfile`
+2. **Build** and **tag** docker image `docker build -t <username>/<image-name>:<tag> .` 
+3. **Login** to dockerhub `docker login --username=<username>`. You will be prompted for password.
+4. **Push** your docker image to dockerhub `docker push <username/<image-name>`. Paste this yaml into the tool.
+
+## Step 2 - Deploy back-end to Akash
+
+If you haven't already, take the time to read through the **Akash deployment documentation** and familiarize yourself with the concepts and steps involved [https://docs.akash.network/guides/deploy]([https://docs.akash.network/guides/deploy)
+
+You can deploy to Akash using the **standard Akash CLI** directly [https://docs.akash.network/guides/install](https://docs.akash.network/guides/install) but for the purpose of this guide, I am using **tombeynon's Akash Deploy UI** [https://github.com/tombeynon/akash-deploy](https://github.com/tombeynon/akash-deploy) which is a great tool built on top of the standard CLI. Steps for deploying to Akash using this tool are below.
+
+1. Start the **Akash Deploy UI** tool by running the following:
+	```
+	docker run -v ~/.akash-ui:/root/akash -p 3000:3000 --rm -it tombeynon/akash-deploy
+	```
+2. Visit [http://localhost:3000
+]() to access the tool
+3. Use the tool to **create a new wallet**. Make sure to record your mnemonic phrase so that you can restore the wallet if needed in the future.
+4. **Fund this new wallet with at least 5 AKT** (5,000,000 UAKT) by transferring 5 AKT or more to the displayed wallet address.
+5. **Create a new certificate**. This certificate only needs to be created once and will be used for all future deployments.
+6. **Create a new deployment** using `akash/deploy-sample.yml` as a template. The Akash Stack Definition Language (SDL) 
+7. Once you have created your deployment, you will start to receive bids. You can view these in the tool.
+8. Chose a bid and **Create a lease**, then **Send manifest**.
+9. At this point the tool will show you your **Web URIs** which you can use to access your application.
+10. Update [application/frontend/.env.production](application/frontend/.env.production) with the **Web URIs**.
 
 ## Quick Installation & Start
 
