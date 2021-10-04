@@ -102,7 +102,7 @@ The Mirror Web App is a web frontend for interacting with [Mirror Contracts](htt
 
 Portals at their most basic are a special type of renter on the Sia network. If you run a Sia node, you can easily upload files to Skynet or pin files you find on the network.
 
-***Mirror community had to deploy their own Skynet portal pinning end-points for Mirror-web-dapp | Eth-web-app | Terra-staion | Terra-swap***
+***Mirror community had to deploy their own Skynet portal onto Akash pinning end-points for Mirror-web-dapp | Eth-web-app | Terra-staion | Terra-swap***
 
 ### Blocklists:
 
