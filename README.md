@@ -1,8 +1,14 @@
 # Hackathon: Harmony Hackathon: Terra Challenge
 
+Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o
+
 ## Decentralized Asset Management.
 
 Over 20% of users of Mirror are in Thailand. Interact with Terra.js, Mirror.js to build decentralized front ends for Mirror. This is a core priority for TFL to enable censorship resistant asset management across borders.
+
+***Keywords:***
+
+Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentralization, Scalability and Speed (Super important for Real-World Assets)
 
 ## Host Mirror's User Interface Front-End On Skynet
 1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
@@ -92,6 +98,30 @@ In the mean time, we are working with skynet to build a tool where servers can p
 The Mirror Web App is a web frontend for interacting with [Mirror Contracts](https://github.com/Mirror-Protocol/mirror-contracts). It is intended to be used with the [Terra Station Extension](https://terra.money/extension) plugin for Chromium browsers.
 
 ## Skynet portal URL
+
+## Skynet Web Portals:
+
+Portals at their most basic are a special type of renter on the Sia network. If you run a Sia node, you can easily upload files to Skynet or pin files you find on the network.
+
+***Mirror community had to deploy their own Skynet portal onto Akash pinning end-points for Mirror-web-dapp | Eth-web-app | Terra-staion | Terra-swap***
+
+### Blocklists:
+
+Portals maintain a list of "blocklisted" files that are not downloadable through their portal, Blocklists are an important way for portals to remain compliant with legal obligations.
+
+***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whom its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location constraints*** 
+
+### Web Portal Components:
+
+Skynet Web Portals consist of all the components needed to operate a publically accessible portal allowing access to the full Skynet ecosystem.
+The web portal consists of:
+1. a full Sia node
+2. a full Handshake node
+3. a web-server
+4. a web-app frontend
+5. various scripts for server maintenance
+
+This list will continue to grow as Skynet add functionality to support things like accounts and payment processing.
 
 **Mirror-web-dApp**
 
