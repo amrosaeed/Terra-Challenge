@@ -16,7 +16,7 @@ Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentraliza
 3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
 
 ### Terra station wallet | Mirror mobile wallet
-1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/).
+1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/) ***Built on Skynet***.
 2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station, as unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
 3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
 4. [ ] We also looked at integrating Terra-Awap with Homescreen but unfortunately we cut short on time.
@@ -30,7 +30,7 @@ There are oracle contracts for each mAsset. These assets use band protocol, whic
 So band has their oracle state, Terra just has a relayer as a contract implemented on Terra.
 Technically, decentralizing mirror webapp has nothing to do with the oracle feed, however, the inner workings are decentralized ***(but not ideal setup for preventing front running)*** . Since the price feed is from band, if you run your clock around Band faster than the relayer you can front run Mirror users.
 
-***Solution immplemented (Mirror-web-app) to avoid front running and add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
+***Solution immplemented (Mirror-web-app) to add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
  
 #### Mirror-graph:
 
@@ -103,13 +103,23 @@ Portals at their most basic are a special type of renter on the Sia network. If 
 
 ***Mirror community had to deploy their own Skynet portal onto Akash pinning end-points for Mirror-web-dapp | Eth-web-app | Terra-staion | Terra-swap***
 
-Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platform like Akash which gives the deployers the ability to choose/continuously change where its deplyed and by whom its provided (Akash-Providers) render it as Geo-free deployment abiding user-geo-location constraints
-
 ### Blocklists:
 
 Portals maintain a list of "blocklisted" files that are not downloadable through their portal, Blocklists are an important way for portals to remain compliant with legal obligations.
 
-***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whom its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location constraints*** 
+***Deploying a community owned Skynet portal over a decentralized/censorship-resistant cloud platfrorm like Akash which gives the deployers the ability to choose/continously change where its deplyed and by whom its provided (Akash-Providers) render it as Geo-free deployment abiding user/platform geo-location-law constraints*** 
+
+Note: 99% of blocklist request are for phishing, copyright, or illegal content. And this is usually files, not apps. the only app that has been targetting was the uniswap frontend and that was reported by uniswap itself.
+
+#### Current hurdels for deploying a Skynet portal on Akash:
+
+1. The Webportal doesn't run as docker image for performance reasons, webportal is a number of dockerized services But the underlying portal is just a skyd instance While the services are dockerize, skyd needs to run on bare metal. It can't run on a virtual machine without special configuration, skyd needs persistent storage which Akash doesn't have yet, it is largely a performance thing. and we have never designed or tested for it. skyd has a lot of disk i/o and if that is on a virtual instance it would really grind things to a halt
+
+#### Future updates:
+
+1. future state might be different. When the Sia Foundation releases UTreeXO there are a lot of interesting things that it can enable in terms of requirements around skyd
+
+2. we plan to solve for app blocking by having homescreen encrypt the app using a special seed for the user, and having a loader that can be passed an encryption key this solves a couple of problems, As Community won't need to deploy their own Skynet portal on Akash. 
 
 ### Web Portal Components:
 
