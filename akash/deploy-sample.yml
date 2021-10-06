@@ -63,8 +63,8 @@ services:
         to:
           - service: web
 
-  web:
-    image: user994455/unstoppable-stack-poc:latest
+ # web:
+    image: 
     env:
       - PYTHONPATH=.
       - BACKUP_PASS=custompassword
@@ -146,7 +146,7 @@ deployment:
     dcloud:
       profile: pgpool
       count: 1
-  web:
+ # web:
     dcloud:
       profile: web
       count: 1
