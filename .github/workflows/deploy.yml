@@ -1,4 +1,4 @@
-name: Deploy to Skynet
+# name: Deploy to Skynet
 
 on:
   pull_request:
