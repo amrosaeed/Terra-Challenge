@@ -44,6 +44,35 @@ Mirror-web-dapp relies on mantle. It s just a state reader interface, meant to u
 
 If you query to lcd, you send a query msg to some nodes. But if you query to lcd, the msg send to the mantle server, lcd and mantle do almost the same thing. Mantle is only for the get msg
 
+#### Current state of price feed to mAssets smart contracts Vs dAPIs solution:
+
+![Screenshot from 2021-10-08 08-08-50](https://user-images.githubusercontent.com/82784007/136554494-73def51f-3327-47c0-86b9-1e2095f21c57.png)
+
+***Figure 1: Decentralized interoperability solutions employ third-party oracles that do not
+natively reveal their sources. dAPIs are composed of first-party oracles, meaning that API
+providers operate their own Airnodes. In addition, dAPIs are decentralized in how they are
+governed, resulting in end-to-end decentralization.***
+
+***TFL Aggregator***
+
+Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and cost effeciency. 
+
+@ "https://mantle.terra.dev/" 
+
+@ "https://graph.mirror.finance/graphql" , 
+
+#### Problems 
+
+1. An intermediate layer of insecure and expensive third-party oracles
+
+3. Decentralized interoperability solutions employ third-party oracles that do not
+natively reveal their sources.
+
+3. An ecosystem that nurtures rent-seeking middlemen, while excluding the ac-
+tual sources of the data;
+
+4. Indiscriminate treatment of data received from different sources in a data feed.
+
 ***Solution Part1:***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
