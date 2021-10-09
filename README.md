@@ -57,27 +57,44 @@ governed, resulting in end-to-end decentralization.***
 
 Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and cost effeciency. 
 
-@ "https://mantle.terra.dev/" 
-
-@ "https://graph.mirror.finance/graphql" , 
+- @ "https://mantle.terra.dev/" 
+- @ "https://graph.mirror.finance/graphql" , 
 
 #### Problems 
 
-1. An intermediate layer of insecure and expensive third-party oracles
+- An intermediate layer of insecure and expensive third-party oracles
 
-3. Decentralized interoperability solutions employ third-party oracles that do not
+- Decentralized interoperability solutions employ third-party oracles that do not
 natively reveal their sources.
 
-3. An ecosystem that nurtures rent-seeking middlemen, while excluding the ac-
+- An ecosystem that nurtures rent-seeking middlemen, while excluding the ac-
 tual sources of the data;
 
-4. Indiscriminate treatment of data received from different sources in a data feed.
+- Indiscriminate treatment of data received from different sources in a data feed.
 
-***Solution Part1:***
+***Solution Part1: Integrating API3 Schema for Mirror Protocol***
+
+#### A) Airnode
+
+![airnode](https://user-images.githubusercontent.com/82784007/136646821-f3dbe305-898a-4980-951f-5821f5765cdd.png)
+
+Airnode is composed of two parts: The protocol contract and the node application. The Airnode protocol contract is implemented in Solidity.
+
+Solidity typically compiles to EVM bytecode, which means that your smart contract platform should be EVM-compatible. ***In theory***, you can also compile Solidity into other types of bytecode (e.g., WASM as ***in case of mAssets smart contracts***) that would run natively on your smart contract platform, yet the resulting integration will need to be tested extensively.
+
+#### What next? :Introducing Airnode compatibility @ Terra smart chain:
+
+  -  Airnode and its protocol are designed to enable standardized and set-and-forget oracle nodes. Its value-add comes from its design philosophy as much as its implementation.
+  -  The integration effort will only cover the parts of Airnode that interact with the chain. The part that interacts with APIs does not need to be modified at all, and that constitutes roughly 50% of the node.
+  -  Porting Airnode to your chain will make the existing API–oracle integrations made for Airnode available to your chain. Therefore, you would not only be porting a piece of software, but all the APIs that will be made available as a result.
+
+#### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
+
+***Solution Part2:***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
-***Solution Part2:***
+***Solution Part3:***
 
 The question of "is the server lying to me" is another question. Skynet has 2 ways of getting around this.
 
