@@ -69,11 +69,11 @@ natively reveal their sources.
 tual sources of the data;
 - Indiscriminate treatment of data received from different sources in a data feed.
 
-***Solution Part1: Integrating API3 Schema for Mirror Protocol***
+***Solution No1: Integrating API3 Schema for Mirror Protocol***
 
-#### A) Airnode
+#### A) API3 Airnode
 
-![airnode](https://user-images.githubusercontent.com/82784007/136646821-f3dbe305-898a-4980-951f-5821f5765cdd.png)
+![oie_918718ZPDqTIt9](https://user-images.githubusercontent.com/82784007/136665994-f854678a-35c8-4043-8970-9a1828596f15.png)
 
 Airnode is composed of two parts: The protocol contract and the node application. The Airnode protocol contract is implemented in Solidity.
 
@@ -94,11 +94,11 @@ It could be expected that significant parts of this will have to be reimplemente
 
 #### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
 
-***Solution Part2:***
+***Solution No2:***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
-***Solution Part3:***
+***Problems:***
 
 The question of "is the server lying to me" is another question. Skynet has 2 ways of getting around this.
 
@@ -108,7 +108,7 @@ The question of "is the server lying to me" is another question. Skynet has 2 wa
 In the mean time, we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a front-end that relies on "continous" data feeds wouldn't ever have to communicate with the server. Users would just have to trust that the publishing party's  private seed wasn't compromised. Even with GraphQL, a Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
 
-![aza](https://user-images.githubusercontent.com/82784007/136664869-c90b41cf-2c07-4009-acc5-a853f3399f9a.png)
+![Screenshot from 2021-10-04 04-49-41](https://user-images.githubusercontent.com/82784007/136665910-9ad8fd4e-2f76-4822-81f0-c3e5786dac54.png)
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
