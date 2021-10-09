@@ -443,6 +443,11 @@ You can now **visit [http://localhost:3000](http://localhost:3000)** in the brow
 
 - Unstoppable Stack [https://github.com/coffeeroaster/unstoppable-web2.0/](https://github.com/coffeeroaster/unstoppable-web2.0/)
 
+#### API3
+
+- API3 White Paper [https://drive.google.com/file/d/1GzkLKc6DYxImgeDhoKLA4wHGlE0eGGgo/view](https://drive.google.com/file/d/1GzkLKc6DYxImgeDhoKLA4wHGlE0eGGgo/view)
+- API3 Website [https://api3.org/](https://api3.org/)
+
 #### Akash
 - Akash deployment documentation [https://docs.akash.network/guides/deploy](https://docs.akash.network/guides/deploy)
 - Akash multi-tier SDL guide [https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md](https://github.com/ovrclk/docs/blob/master/guides/multi-tier-app.md)
