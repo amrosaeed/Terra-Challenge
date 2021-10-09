@@ -94,6 +94,10 @@ It could be expected that significant parts of this will have to be reimplemente
 
 #### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
 
+#### API3 DAO
+
+To decentralize the governance of both dAPIs and the project as a whole, API3 will be governed by a DAO. The governance will be entirely decentralized and open,
+
 ***Solution No2:***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
