@@ -63,13 +63,10 @@ Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contra
 #### Problems 
 
 - An intermediate layer of insecure and expensive third-party oracles
-
 - Decentralized interoperability solutions employ third-party oracles that do not
 natively reveal their sources.
-
 - An ecosystem that nurtures rent-seeking middlemen, while excluding the ac-
 tual sources of the data;
-
 - Indiscriminate treatment of data received from different sources in a data feed.
 
 ***Solution Part1: Integrating API3 Schema for Mirror Protocol***
@@ -87,6 +84,10 @@ Solidity typically compiles to EVM bytecode, which means that your smart contrac
   -  Airnode and its protocol are designed to enable standardized and set-and-forget oracle nodes. Its value-add comes from its design philosophy as much as its implementation.
   -  The integration effort will only cover the parts of Airnode that interact with the chain. The part that interacts with APIs does not need to be modified at all, and that constitutes roughly 50% of the node.
   -  Porting Airnode to your chain will make the existing API–oracle integrations made for Airnode available to your chain. Therefore, you would not only be porting a piece of software, but all the APIs that will be made available as a result.
+
+#### Note: 
+
+That would require significant modification of the node and is probably a multi-month project by someone who knows what they are doing. This is because the protocol aims to integrate APIs in a very general way rather than only being a price data feed.
 
 #### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
 
