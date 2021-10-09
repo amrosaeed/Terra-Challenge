@@ -112,7 +112,7 @@ In the mean time, we are working with skynet to build a tool where servers can p
 
 | DNS | Frontend  | Backend | Redundant Database | Query Language | API
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| ![](guide/images/handshake_logo.png) | ![](guide/images/skynet_logo.png) | ![](guide/images/akash_logo.png) | ![](guide/images/postgresql-logo.png) | ![](guide/images/GraphQL_Logo.svg.png)
+| ![](guide/images/handshake_logo.png) | ![](guide/images/skynet_logo.png) | ![](guide/images/akash_logo.png) | ![](guide/images/postgresql-logo.png) | ![](guide/images/GraphQL_Logo.svg.png) 
 | [Handshake](https://handshake.org/) | [Skynet](https://siasky.net/) | [Akash](https://akash.network/) | [Postgresql](http://postgresql.org) | [GraphQL](https://graphql.org/) | [API3](https://api3.org/)
 
 ## Best practices to host front-ends on Skynet
