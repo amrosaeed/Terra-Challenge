@@ -94,9 +94,11 @@ It could be expected that significant parts of this will have to be reimplemente
 
 #### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
 
-#### API3 DAO
+#### B) API3 DAO
 
 To decentralize the governance of both dAPIs and the project as a whole, API3 will be governed by a DAO. The governance will be entirely decentralized and open,
+
+![a7a2](https://user-images.githubusercontent.com/82784007/136669974-834a0862-7cc4-4f40-8202-05f689d29615.png)
 
 ***Solution No2:***
 
