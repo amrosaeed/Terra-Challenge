@@ -89,6 +89,9 @@ Solidity typically compiles to EVM bytecode, which means that your smart contrac
 
 That would require significant modification of the node and is probably a multi-month project by someone who knows what they are doing. This is because the protocol aims to integrate APIs in a very general way rather than only being a price data feed.
 
+In the node implementation, the EVM-specific parts live in the evm/ directory (https://github.com/api3dao/airnode/tree/master/packages/node/src/evm)
+It could be expected that significant parts of this will have to be reimplemented
+
 #### Experimental: We currently checking Airnode compatibility with EVM so we checked mEth app but Mirror core contracts are only available on Terra, Mirror Protocol assets (such as MIR and mAssets) are available on Ethereum.
 
 ***Solution Part2:***
