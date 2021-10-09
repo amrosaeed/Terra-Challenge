@@ -104,7 +104,7 @@ The question of "is the server lying to me" is another question. Skynet has 2 wa
 In the mean time, we are working with skynet to build a tool where servers can publish their data like price updates to skynet using a pretty simple signature methods in the browser. Then, a front-end that relies on "continous" data feeds wouldn't ever have to communicate with the server. Users would just have to trust that the publishing party's  private seed wasn't compromised. Even with GraphQL, a Specialized-to-User front end on Homescreen could run the query/validator type machine but never open it up to incoming traffic from the web.
 
 
-![Screenshot from 2021-10-04 04-49-41](https://user-images.githubusercontent.com/82784007/135821738-d1474698-4d91-4df0-8633-f6e96e785449.png)
+![aza](https://user-images.githubusercontent.com/82784007/136664869-c90b41cf-2c07-4009-acc5-a853f3399f9a.png)
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
