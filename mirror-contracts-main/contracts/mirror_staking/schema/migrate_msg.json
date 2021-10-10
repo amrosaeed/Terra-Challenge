@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MigrateMsg",
+  "description": "We currently take no arguments for migrations",
+  "type": "object",
+  "required": [
+    "network",
+    "short_reward_contract"
+  ],
+  "properties": {
+    "base_denom": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "mint_contract": {
+      "type": "string"
+    },
+    "oracle_contract": {
+      "type": "string"
+    },
+    "premium_min_update_interval": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "terraswap_factory": {
+      "type": "string"
+    },
+    "Network": {
+      "type": "string",
+      "enum": [
+        "mainnet",
+        "test_net"
+      ]
+    }
+  }
+}
