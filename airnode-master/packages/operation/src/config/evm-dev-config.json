@@ -1,0 +1,76 @@
+{
+  "deployerIndex": 0,
+  "airnodes": {
+    "CurrencyConverterAirnode": {
+      "mnemonic": "achieve climb couple wait accident symbol spy blouse reduce foil echo label",
+      "authorizers": [],
+      "endpoints": {
+        "convertToUSD": {
+          "oisTitle": "Currency Converter API"
+        }
+      },
+      "templates": {
+        "template-1": {
+          "endpoint": "convertToUSD",
+          "oisTitle": "Currency Converter API",
+          "parameters": [
+            { "type": "bytes32", "name": "to", "value": "USD" },
+            { "type": "bytes32", "name": "_type", "value": "int256" },
+            { "type": "bytes32", "name": "_path", "value": "result" },
+            { "type": "bytes32", "name": "_times", "value": "100000" }
+          ]
+        }
+      }
+    }
+  },
+  "authorizers": {},
+  "requesters": {
+    "MockRrpRequesterFactory": { "sponsors": ["bob"] }
+  },
+  "sponsors": [
+    {
+      "id": "alice",
+      "airnodes": {
+        "CurrencyConverterAirnode": { "ethBalance": "1" }
+      }
+    },
+    {
+      "id": "bob",
+      "airnodes": {
+        "CurrencyConverterAirnode": { "ethBalance": "5" }
+      }
+    }
+  ],
+  "requests": [
+    {
+      "sponsorId": "bob",
+      "type": "template",
+      "airnode": "CurrencyConverterAirnode",
+      "template": "template-1",
+      "requester": "MockRrpRequesterFactory",
+      "fulfillFunctionName": "fulfill",
+      "parameters": [{ "type": "bytes32", "name": "from", "value": "ETH" }]
+    },
+    {
+      "sponsorId": "bob",
+      "type": "full",
+      "airnode": "CurrencyConverterAirnode",
+      "endpoint": "convertToUSD",
+      "oisTitle": "Currency Converter API",
+      "requester": "MockRrpRequesterFactory",
+      "fulfillFunctionName": "fulfill",
+      "parameters": [
+        { "type": "bytes32", "name": "from", "value": "ETH" },
+        { "type": "bytes32", "name": "to", "value": "USD" },
+        { "type": "bytes32", "name": "_type", "value": "int256" },
+        { "type": "bytes32", "name": "_path", "value": "result" },
+        { "type": "bytes32", "name": "_times", "value": "100000" }
+      ]
+    },
+    {
+      "sponsorId": "alice",
+      "type": "withdrawal",
+      "airnode": "CurrencyConverterAirnode"
+    }
+  ]
+}

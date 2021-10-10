@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "noImplicitReturns": true,
+    "outDir": "dist"
+  },
+  "include": [
+    "./bin/**/*",
+    "./src/**/*"
+  ],
+  "exclude": [
+    "dist/**/*",
+    "node_modules/**/*"
+  ]
+}

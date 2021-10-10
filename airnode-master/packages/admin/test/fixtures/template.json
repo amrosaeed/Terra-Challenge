@@ -1,0 +1,16 @@
+{
+  "airnode": "0x4a1dF2859279Fa92A41Fd7d487A3c2b76ac8570b",
+  "endpointId": "0x2605589dfc93c8f9c35eecdfe1e666c2193df30a8b13e1e0dd72941f59f9064c",
+  "parameters": [
+    {
+      "name": "name1",
+      "value": "value1",
+      "type": "string"
+    },
+    {
+      "name": "name2",
+      "value": "1000",
+      "type": "uint256"
+    }
+  ]
+}

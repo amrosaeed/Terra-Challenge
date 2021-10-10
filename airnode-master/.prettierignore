@@ -1,0 +1,17 @@
+**/node_modules/**
+.eslintrc.js
+
+# Buidler
+**/cache/**
+**/artifacts/**
+**/buidler.config.js
+
+**/.build/**
+**/.serverless/**
+**/coverage/**
+**/dist/**
+**/.webpack/**
+
+*.json
+
+packages/validator/test/fixtures
