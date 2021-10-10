@@ -58,14 +58,14 @@ natively reveal their sources. dAPIs are composed of first-party oracles, meanin
 providers operate their own Airnodes. In addition, dAPIs are decentralized in how they are
 governed, resulting in end-to-end decentralization.***
 
-***TFL Aggregator***
+### TFL Aggregator
 
 Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and intrinsically cost effeciency. 
 
 - @ "https://mantle.terra.dev/" 
 - @ "https://graph.mirror.finance/graphql" 
 
-#### Problems 
+#### ***Problems***
 
 - An intermediate layer of insecure and expensive third-party oracles
 - Decentralized interoperability solutions employ third-party oracles that do not
@@ -77,7 +77,7 @@ tual sources of the data;
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
 
-### ***Solution No1: Integrating API3 Schema for Mirror Protocol***
+## ***Solution No1: Integrating API3 Schema for Mirror Protocol***
 
 #### A) API3 Airnode
 
@@ -108,7 +108,7 @@ To decentralize the governance of both dAPIs and the project as a whole, API3 wi
 
 ![a7a2](https://user-images.githubusercontent.com/82784007/136669974-834a0862-7cc4-4f40-8202-05f689d29615.png)
 
-### ***Solution No2: Featuering Skynet Tooling***
+## ***Solution No2: Featuering Skynet Tooling***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
