@@ -48,7 +48,8 @@ Mirror-web-dapp relies on mantle. It s just a state reader interface, meant to u
 
 If you query to lcd, you send a query msg to some nodes. But if you query to lcd, the msg send to the mantle server, lcd and mantle do almost the same thing. Mantle is only for the get msg
 
-#### Current state of price feed to mAssets smart contracts Vs dAPIs solution:
+
+## Current state of price feed to mAssets smart contracts Vs dAPIs solution:
 
 ![Screenshot from 2021-10-08 08-08-50](https://user-images.githubusercontent.com/82784007/136554494-73def51f-3327-47c0-86b9-1e2095f21c57.png)
 
@@ -73,7 +74,10 @@ natively reveal their sources.
 tual sources of the data;
 - Indiscriminate treatment of data received from different sources in a data feed.
 
-***Solution No1: Integrating API3 Schema for Mirror Protocol***
+![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
+
+
+### ***Solution No1: Integrating API3 Schema for Mirror Protocol***
 
 #### A) API3 Airnode
 
@@ -104,7 +108,7 @@ To decentralize the governance of both dAPIs and the project as a whole, API3 wi
 
 ![a7a2](https://user-images.githubusercontent.com/82784007/136669974-834a0862-7cc4-4f40-8202-05f689d29615.png)
 
-***Solution No2:***
+### ***Solution No2:***
 
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
@@ -120,7 +124,6 @@ In the mean time, we are working with skynet to build a tool where servers can p
 
 ![Screenshot from 2021-10-04 04-49-41](https://user-images.githubusercontent.com/82784007/136665910-9ad8fd4e-2f76-4822-81f0-c3e5786dac54.png)
 
-![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
 # Decentralized infrastructure
 
