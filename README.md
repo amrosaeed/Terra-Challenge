@@ -34,13 +34,13 @@ Technically, decentralizing mirror webapp has nothing to do with the oracle feed
  
 #### Mirror-graph:
 
-Mirror itself can run without the graphql backend though. The graphql backend is there to provide historical data. Alot of business logic is still functional without it but not all  business logic relies on historical data. Although you can't front run a price feed from a centralized server (price sources), it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
+Mirror itself can run without the graphql backend though. The graphql backend is there to provide historical data. Alot of business logic is still functional without it but not all  business logic relies on historical data, it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
 
 #### Mantle:
 
-***Solution immplemented (Mirror-web-dApp) to avoid relying on a single point of failure.***
+***Solution immplemented (Mirror-web-dApp) with an ultimate goal of indexing the whole Blockchain .***
 
-Mirror-web-dapp relies on mantle. It s just a state reader interface, meant to used to mitigate the risk proposed by relying soely on GraphQl, but also hosted on a centralized server as a blockchain SaaS.
+Mirror-web-dapp relies on mantle. It s just a state reader interface, meant to used to index the chain, but also hosted on a centralized server as a blockchain SaaS.
 
 If you query to lcd, you send a query msg to some nodes. But if you query to lcd, the msg send to the mantle server, lcd and mantle do almost the same thing. Mantle is only for the get msg
 
@@ -55,7 +55,7 @@ governed, resulting in end-to-end decentralization.***
 
 ***TFL Aggregator***
 
-Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and cost effeciency. 
+Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and intrensicly cost effeciency. 
 
 - @ "https://mantle.terra.dev/" 
 - @ "https://graph.mirror.finance/graphql" , 
