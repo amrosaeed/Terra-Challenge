@@ -55,10 +55,10 @@ governed, resulting in end-to-end decentralization.***
 
 ***TFL Aggregator***
 
-Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and intrensicly cost effeciency. 
+Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contracts, although TFL is transparent (open source code) but eventually these solutions suffers from drwabacks regrads decentralization, governance, and intrinsically cost effeciency. 
 
 - @ "https://mantle.terra.dev/" 
-- @ "https://graph.mirror.finance/graphql" , 
+- @ "https://graph.mirror.finance/graphql" 
 
 #### Problems 
 
