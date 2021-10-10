@@ -1,4 +1,4 @@
-# Hackathon: Harmony Hackathon: Terra Challenge
+# Harmony Hackathon: Terra Challenge: Mirror Protocol
 
 Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o
 
