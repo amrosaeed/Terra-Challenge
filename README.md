@@ -11,15 +11,18 @@ Over 20% of users of Mirror are in Thailand. Interact with Terra.js, Mirror.js t
 Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentralization, Scalability and Speed (Super important for Real-World Assets)
 
 ## Host Mirror's User Interface Front-End On Skynet
-1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade
-2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/
-3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/
+
+#### Working Demo:
+
+1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade | [Github](https://github.com/amrosaeed/Skynet-Hackathon)
+2. [x] Hosting eth-web-app | https://100aq6vcvfedpdtaqkfdp8unjm4cs6p4153ikbnvsjd3sd1dtipeg5g.siasky.net/#/ | [Github](https://github.com/amrosaeed/eth-web-app)
+3. [x] Hosting Terra-Station | https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/ | [Github](https://github.com/amrosaeed/terra-station)
 
 ### Terra station wallet | Mirror mobile wallet
 1. [x] Currently its possible that Ledger device will connect to [Terra-Station](https://1001masu2en7jc3d09uurtn0qdi82unsi3ok19cuehorg9veulubkq8.siasky.net/) ***Built on Skynet***.
 2. [ ] We've been searching the possiblity of creating a distributed and censorship-free permissionless store for browser extension on Fluence network like terra-station, as unfortunately  there will be always the possiblity of chrome browser remove the extension out of its store.
 3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
-4. [ ] We also looked at integrating Terra-Awap with Homescreen but unfortunately we cut short on time.
+4. [ ] We also looked at integrating Terra-Swap with Homescreen but unfortunately we cut short on time.
 ## Host Mirror's User Interface Back-End On Akash
 
 ***State of data feeds for Mirror-web-dapp:***
