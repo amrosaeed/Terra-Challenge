@@ -30,9 +30,10 @@ There are oracle contracts for each mAsset. These assets use band protocol, whic
 So band has their oracle state, Terra just has a relayer as a contract implemented on Terra.
 Technically, decentralizing mirror webapp has nothing to do with the oracle feed, however, the inner workings are decentralized ***(but not ideal setup for preventing front running)*** . Since the price feed is from band, if you run your clock around Band faster than the relayer you can front run Mirror users.
 
-***Solution immplemented (Mirror-web-app) to add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
  
 #### Mirror-graph:
+
+***Solution immplemented (Mirror-web-app) to add much more functionality (Complex-queries) is to use GraphQl server (Mirror Graph)***
 
 Mirror itself can run without the graphql backend though. The graphql backend is there to provide historical data. Alot of business logic is still functional without it but not all  business logic relies on historical data, it acts as a single point of failure and changes to APIs can break old builds to Homescreen.
 
