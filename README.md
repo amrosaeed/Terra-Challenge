@@ -109,6 +109,11 @@ It could be expected that significant parts of this will have to be reimplemente
 
 To decentralize the governance of both dAPIs and the project as a whole, API3 will be governed by a DAO. The governance will be entirely decentralized and open,
 
+1. Porting Airnode to another chain allows Mirror community to serve their cases on Terra chain, and is obviously beneficial for the DAO (though this varies with the potential of the target chain). that would can only be done to satisfy a specific to Mirror dapp/use-case.
+2. This will not only require funding, but also a fair bit of support from the Airnode/protocol developers. It would be ideal for these to be minimal.
+3. I'd say this is the most important factor regarding a port attempt. The port will be challenging and the people behind it will have to be capable. A proof of concept implementation before any proposal would be very helpful in supporting this.
+4. A proposal can be seen as a contract between the DAO and the grant recipient. It needs to be planned in a way that it doesn't expose the DAO to a high risk due to the recipient not providing the deliverables. One of the ways to achieve this is to make piecemeal grant proposals instead of a single large one.
+
 ![a7a2](https://user-images.githubusercontent.com/82784007/136669974-834a0862-7cc4-4f40-8202-05f689d29615.png)
 
 ## Solution No2: Featuering Skynet Tooling
