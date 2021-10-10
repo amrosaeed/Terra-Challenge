@@ -65,6 +65,9 @@ Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contra
 - @ "https://mantle.terra.dev/" 
 - @ "https://graph.mirror.finance/graphql" 
 
+***e.g. If a decentralized oracle network is configurable by a centralized entity, its governance is centralized. This may cause governance mistakes to go unnoticed, which may result in the data feeds misreporting even when the underlying APIs and ora-
+cles are functioning correctly.***
+
 #### ***Problems***
 
 - An intermediate layer of insecure and expensive third-party oracles
@@ -348,9 +351,10 @@ The backend runs on [Akash](https://akash.network). Take a moment to review the 
 * The `pg-0` image initially loads [pg-0/dbout.sh](pg-0/dbout.sh) before the PG cluster is started. It reads in the following env vars: `BACKUP_SYKNET_URL` and `BACKUP_PASS`. The encrypted zip file is retrieved from Skynet and decrpyts it with `BACKUP_PASS`. Finally, the DB backup is loaded into the PG cluster. 
 * `BACKUP_SKYNET_URL` is used to retrieve the latest backup.
 
+#### Problem
 
+***We tried to make graph database work on Akash but Often times graph databases need servers with very high amounts of RAM (128 GB+) and Akash nodes top out at 16 GB . Which would not be an issue if you could shard directed graphs, but that tends to be difficult to do because of the nature of the graph, Depends on the size of the graph of course***
 ### Architecture
-
 
 Based off the [Bitnami pgpool project](https://github.com/bitnami/bitnami-docker-pgpool/), this approach sets up three containers. **pg-0** as a postgresql master, **pg-1** as a postgresql secondary  ( running as a hot standby) and **pg-pool** will determine which postgres container to connect to.
 
