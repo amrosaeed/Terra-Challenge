@@ -11,7 +11,7 @@ Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o (Not up-to-date)
 7. [ Decentralized Infrastructure ](#deinfra)  
 8. [ Mirror Web dApp (Terra) UI Front-End (GUIDE) ](#dappguide)   
 9. [ Mirror Web dApp (Terra) UI Back-End ](#dappbackendguide) 
-10. [Run demo locally ](#localrun)
+10. [Run demo locally ](#local)
 11. [ Sources and resources ](#sources)
 
 
