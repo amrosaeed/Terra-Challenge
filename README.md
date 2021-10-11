@@ -1,6 +1,7 @@
 # Harmony Hackathon: Terra Challenge: Mirror Protocol 
 
 Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o (More in-depth explanation on Skynet and Systems Design) 
+
 Updated Video - https://youtu.be/n2VgsXdKM58 (API 3/Terra Station Update)
 
 1. [ Challenge Explanation ](#desc)
