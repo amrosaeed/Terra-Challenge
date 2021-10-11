@@ -1,10 +1,25 @@
-# Harmony Hackathon: Terra Challenge: Mirror Protocol
+# Harmony Hackathon: Terra Challenge: Mirror Protocol 
 
-Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o (Not up-to-date)
+Youtube Demo - https://www.youtube.com/watch?v=VWB0XglZp-o (More in-depth explanation on Skynet and Systems Design) 
+
+Updated Video - https://youtu.be/n2VgsXdKM58 (API 3/Terra Station Update)
+
+1. [ Challenge Explanation ](#desc)
+2. [ Demos ](#demos) 
+3. [ State of Data Feeds for Mirror DApp ](#datafeeds) 
+4. [ Problems ](#problems)  
+5. [ Soltion No. 1 ](#solno1) 
+6. [ Solution No. 2 ](#solno2) 
+7. [ Decentralized Infrastructure ](#deinfra)  
+8. [ Mirror Web dApp (Terra) UI Front-End (GUIDE) ](#dappguide)   
+9. [ Mirror Web dApp (Terra) UI Back-End ](#dappbackendguide) 
+10. [Run demo locally ](#local)
+11. [ Sources and resources ](#sources)
+
 
 [![Add to Homescreen](https://img.shields.io/badge/Skynet-Add%20To%20Homescreen-00c65e?style=for-the-badge&labelColor=0d0d0d&logo=data:image/png;base64,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)](https://homeapp.hns.siasky.net/#/skylink/AQC2TDP2zSLBzMXFWg2FYYpXfUizHrIzg0S4pn6l-2TLfg) ![70503197](https://user-images.githubusercontent.com/82784007/136698990-4bbe0cf8-b735-4c68-ac94-972de7d71f53.png) 
 
-
+<a name="desc"></a>
 ## Decentralized Asset Management.
 
 Over 20% of users of Mirror are in Thailand. Interact with Terra.js, Mirror.js to build decentralized front ends for Mirror. This is a core priority for TFL to enable censorship resistant asset management across borders.
@@ -15,6 +30,7 @@ Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentraliza
 
 ## Host Mirror's User Interface Front-End On Skynet
 
+<a name="demos"></a>
 #### Working Demo:
 
 1. [x] Hosting Mirror web-dapp  | https://2009tnf1ojqq6b5fj5q72je656scv3j06bf5tjms9h48krvfk3fbqo0.siasky.net/#/trade | [Github](https://github.com/amrosaeed/Skynet-Hackathon)
@@ -27,7 +43,7 @@ Asset Management, Censorship-resistance, Cross-porders, Tefi, Defi, Decentraliza
 3. [ ] We also looked at integrating mAssets to MASK network allowing sending,recieving and trading over web2 social networks like twitter but unfortunately we cut short on time.
 4. [ ] We also looked at integrating Terra-Swap with Homescreen but unfortunately we cut short on time.
 ## Host Mirror's User Interface Back-End On Akash
-
+<a name="datafeeds"></a>
 ***State of data feeds for Mirror-web-dapp:***
 
 #### Band protocol (role):
@@ -70,7 +86,7 @@ Mantle & GraphQl servers runs by TFL as API entry point for mAssets smart contra
 
 ***e.g. If a decentralized oracle network is configurable by a centralized entity, its governance is centralized. This may cause governance mistakes to go unnoticed, which may result in the data feeds misreporting even when the underlying APIs and ora-
 cles are functioning correctly.***
-
+<a name="problems"></a>
 #### ***Problems***
 
 - An intermediate layer of insecure and expensive third-party oracles
@@ -82,7 +98,7 @@ tual sources of the data;
 
 ![part3](https://user-images.githubusercontent.com/82784007/135714853-648e5c17-a727-4d7d-9dc5-db46d28317cf.png)
 
-
+<a name="solno1"></a>
 ## Solution No1: Integrating API3 Schema for Mirror Protocol
 
 #### A) API3 Airnode
@@ -120,7 +136,7 @@ To decentralize the governance of both dAPIs and the project as a whole, API3 wi
 ![a7a2](https://user-images.githubusercontent.com/82784007/136669974-834a0862-7cc4-4f40-8202-05f689d29615.png)
 
 ## Solution No2: Featuering Skynet Tooling
-
+<a name="solno2"></a>
 The idea is to deploy arbitrary number of Load Balanced RPC nodes (Terra), along side with Skynet Portal and Mirror graph servers, on Akash network to assure complete decentralization and prevent front running | **currently work is in progress** |. For a rough idea, please refer to current work @  https://github.com/amrosaeed/Akash-Hackathon/blob/solana-omnibus/README.md for network design / Security | **work done for solana** | and https://github.com/amrosaeed/Akash-Hackathon/tree/solana-omnibus/solana-omnibus/Production-Ready/devnet ( SDL files design patterns).
 
 ***Problems:***
@@ -135,7 +151,7 @@ In the mean time, we are working with skynet to build a tool where servers can p
 
 ![Screenshot from 2021-10-04 04-49-41](https://user-images.githubusercontent.com/82784007/136665910-9ad8fd4e-2f76-4822-81f0-c3e5786dac54.png)
 
-
+<a name="deinfra"></a>
 # Decentralized infrastructure
 
 | DNS | Frontend  | Backend | Redundant Database | Query Language | API
@@ -155,7 +171,7 @@ In the mean time, we are working with skynet to build a tool where servers can p
 2. [x] Setup Database Redundancy | Backend Redundant Postgresql infrastucture
 3. [x] Setup database backups | Backup your data locally | Upload local backup to Skynet
 4. [x] Database replication next steps |  Use SkyNet registry as a simpler way to provide backup / restoration.
-
+<a name="dappguide"></a>
 # Mirror Web dApp (Terra) UI fornt-end (GUIDE)
 
 **Note:** By clicking on the black-green button you will be forwarded to Homescreen where users can set their own version of the front end for Mirror-web-dapp.
@@ -303,7 +319,7 @@ Please create a file in your code source “.github/workflows/deploy.yml” with
 source: https://docs.siasky.net/developer-guides/deploy-github-actions
 
 For project's full .yml file: https://github.com/amrosaeed/Terra-Challenge/blob/main/.github/workflows/deploy.yml
-
+<a name="dappbackendguide"></a>
 # Mirror Web dApp (Terra) UI back-end (GUIDE)
 
 ## Step 1 - Push Docker image
@@ -446,7 +462,7 @@ You should now see the values from the database that you backed up.
 * Look into [SkyNet registry](https://siasky.net/docs/?javascript--node#setting-data-on-the-registry) for a simpler way to provide backup / restoration. Right now, each provision to Akash requires updating a new SkyLink URI. Using a Skylink Registry will allow the container to use a consistent `skyns URL` to retrieve the latest backup for ease of use.
 
 ---
-
+<a name="local"></a>
 ## Run demo application locally
 To run the application locally, you can follow the steps below.
 
@@ -465,7 +481,7 @@ To run the application locally, you can follow the steps below.
 	```
 
 You can now **visit [http://localhost:3000](http://localhost:3000)** in the browser to **access the UI**. For testing the **API**, requests can be made to port 80, **Example**: `GET http://localhost:80/api/v1/notes`
-
+<a name="sources"></a>
 ## Sources and resources
 
 #### Unstoppable Stack
